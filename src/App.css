@@ -1,9 +1,19 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 80%;
   pointer-events: none;
 }
 
@@ -15,9 +25,8 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 70px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -34,5 +43,120 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.todo-container {
+  height: calc(100vh - 70px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-todo {
+  width: 300px;
+}
+
+input[type="text"] {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 1rem;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 2rem;
+}
+
+.todos {
+  width: 50vw;
+}
+
+.todos span {
+  float: right;
+  padding-right: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.todos span:hover {
+  color: #61dbfb;
+}
+
+ul {
+  text-align: left;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0 0.2rem 0;
+}
+
+/* Custom Checkbox */
+input[type="checkbox"] {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.todo-content {
+  position: relative;
+  cursor: pointer;
+  line-height: 2;
+}
+.todo-content:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #282c34;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+input[type="checkbox"]:checked + .todo-content:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #282c34;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .todos {
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .todo-container {
+    padding: 2rem 1rem;
+  }
+  .add-todo {
+    width: 100%;
+    overflow: hidden;
+  }
+  .todos {
+    width: 100%;
+  }
+  li {
+    padding: 1rem 0;
   }
 }
