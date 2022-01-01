@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600&display=swap");
+
 *,
 *:before,
 *:after {
@@ -6,100 +8,25 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Signika Negative", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #035e77;
 }
 
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 80%;
-  pointer-events: none;
-}
+/* Navbar.js */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.todo-container {
-  height: calc(100vh - 70px);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.add-todo {
-  width: 300px;
-}
-
-input[type="text"] {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  font-size: 1rem;
-  height: auto;
-  margin: 0;
-  outline: 0;
-  padding: 0.8rem;
-  width: 100%;
-  background-color: #e8eeef;
-  color: #8a97a0;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-  margin-bottom: 2rem;
-}
-
-.todos {
-  width: 50vw;
-}
-
-.todos span {
-  float: right;
-  padding-right: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.todos span:hover {
-  color: #61dbfb;
-}
-
-ul {
-  text-align: left;
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding: 1rem 0 0.2rem 0;
-}
+/* TodoContainer.js */
 
 /* Custom Checkbox */
+
 input[type="checkbox"] {
   padding: 0;
   height: initial;
@@ -138,25 +65,4 @@ input[type="checkbox"]:checked + .todo-content:after {
   border: solid #282c34;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-}
-
-@media screen and (max-width: 768px) {
-  .todos {
-    width: 70vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .todo-container {
-    padding: 2rem 1rem;
-  }
-  .add-todo {
-    width: 100%;
-    overflow: hidden;
-  }
-  .todos {
-    width: 100%;
-  }
-  li {
-    padding: 1rem 0;
-  }
 }

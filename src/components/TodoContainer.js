@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TodoItem from "./TodoItem";
+import styles from "../styles/TodoContainer.module.css";
 
 function TodoContainer() {
   const [todos, setTodos] = useState([]);
@@ -60,8 +61,8 @@ function TodoContainer() {
   };
 
   return (
-    <div className="todo-container">
-      <div className="add-todo">
+    <div className={styles.todoContainer}>
+      <div className={styles.todoForm}>
         <input
           type="text"
           placeholder="Enter a new todo and press enter"
@@ -70,7 +71,7 @@ function TodoContainer() {
           onKeyPress={addTodo}
         />
       </div>
-      <div className="todos">
+      <div className={styles.todoLists}>
         <ul>
           {todos.length > 0 &&
             todos.map((todo) => {

@@ -1,9 +1,10 @@
 import React from "react";
 import { HiX } from "react-icons/hi";
+import styles from "../styles/TodoItem.module.css";
 
 function TodoItem({ todo, toggleTodoStatus, deleteTodo }) {
   return (
-    <li>
+    <li className={styles.todoItem}>
       <input
         type="checkbox"
         id={todo.id}
