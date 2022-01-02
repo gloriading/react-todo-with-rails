@@ -25,7 +25,7 @@ function TodoContainer() {
     if (e.key === "Enter" && Boolean(userInput)) {
       try {
         const res = await axios.post("/api/version1/todos", {
-          todo: { title: userInput, isDone: false },
+          todo: { title: userInput },
         });
         setTodos((preTodos) => [res.data, ...preTodos]);
         setUserInput("");
